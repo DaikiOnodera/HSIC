@@ -4,6 +4,8 @@ from scipy.stats import gamma
 
 #import sys
 
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 """
 This file includes required functions for calculating Hillbert-Schmidt Norms. 
@@ -148,7 +150,8 @@ if __name__ == "__main__":
     data2 = data1 ** 2 + np.random.randn(m, 1) * 100
 
     plt.scatter(data1, data2)
-    plt.show()
+    #plt.show()
+    plt.savefig("fig.png")
 
     #calculate gram matrix
     data1 = Gaussian_kernel_matrix(data1)
